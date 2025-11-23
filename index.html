@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Course Explorer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Course Explorer</h1>
+  </header>
+
+  <!-- Load JSON section -->
+  <section id="load-section">
+    <h2>Load Courses (JSON)</h2>
+    <input type="file" id="fileInput" accept=".json,application/json">
+    <span id="fileName" class="file-name">courses.json</span>
+    <div id="errorMessage" class="error-message"></div>
+  </section>
+
+  <!-- Filters + Sort section -->
+  <section id="controls-section">
+    <h2>Sort and Filter</h2>
+
+    <div class="controls-row">
+      <label>
+        Department:
+        <select id="departmentFilter">
+          <option value="All">All</option>
+        </select>
+      </label>
+
+      <label>
+        Level:
+        <select id="levelFilter">
+          <option value="All">All</option>
+        </select>
+      </label>
+
+      <label>
+        Credits:
+        <select id="creditsFilter">
+          <option value="All">All</option>
+        </select>
+      </label>
+
+      <label>
+        Instructor:
+        <select id="instructorFilter">
+          <option value="All">All</option>
+        </select>
+      </label>
+
+      <label>
+        Sort By:
+        <select id="sortSelect">
+          <option value="none">None</option>
+          <option value="id-asc">ID (A–Z)</option>
+          <option value="id-desc">ID (Z–A)</option>
+          <option value="title-asc">Title (A–Z)</option>
+          <option value="title-desc">Title (Z–A)</option>
+          <option value="semester-asc">Semester (Earliest first)</option>
+          <option value="semester-desc">Semester (Latest first)</option>
+        </select>
+      </label>
+    </div>
+  </section>
+
+  <!-- Main content: list + details -->
+  <main id="main-content">
+    <section id="course-list-section">
+      <div id="courseList" class="course-list">
+        <!-- Course IDs go here -->
+      </div>
+    </section>
+
+    <section id="course-details-section">
+      <div id="courseDetails" class="course-details">
+        <p>Select a course to see details.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
